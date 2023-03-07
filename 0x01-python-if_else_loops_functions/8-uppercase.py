@@ -8,6 +8,7 @@ def uppercase(str):
             new_str+=i
         
         else:
-            new_str+=chr(ord(i))
+            new_str+=chr(ord(i) - 32)
     print("{}".format(new_str))
-        
+
+uppercase("lO")
