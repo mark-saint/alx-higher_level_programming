@@ -5,10 +5,7 @@ def uppercase(str):
 
     for i in str:
         if ord(i) in nums:
-            new_str+=i
-        
+            new_str += i
         else:
-            new_str+=chr(ord(i) - 32)
+            new_str += chr(ord(i) - 32)
     print("{}".format(new_str))
-
-uppercase("lO")
