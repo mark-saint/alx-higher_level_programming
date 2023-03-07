@@ -6,7 +6,8 @@ def uppercase(str):
     for i in str:
         if ord(i) in nums:
             new_str+=i
+        
         else:
             new_str+=chr(ord(i))
-
+    print("{}".format(new_str))
         
