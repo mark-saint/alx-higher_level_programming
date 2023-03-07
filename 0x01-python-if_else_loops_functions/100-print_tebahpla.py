@@ -8,4 +8,4 @@ for i in reversed_list:
     else:
         i = chr(i - 32)
         is_lower = True
-    print(i, end='')
+    print("{}".format(i), end='')
