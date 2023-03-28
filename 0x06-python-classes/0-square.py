@@ -2,6 +2,8 @@
 """
 This is fun
 """
+
+
 class Square:
     """Returns a square"""
     pass
