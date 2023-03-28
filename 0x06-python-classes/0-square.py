@@ -1,3 +1,6 @@
 #!/usr/bin/python3
 class Square:
-   pass
+    '''
+    Returns a square
+    '''
+    pass
