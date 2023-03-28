@@ -27,14 +27,14 @@ class Square:
         """
         return self.__size ** 2
 
-    @getter
+    @property
     def size(self):
         """
         Returns size
         """
         return self.__size
 
-    @setter
+    @size.setter
     def size(self, value):
         if not isinstance(value, int):
             raise TypeError("size must be as integer")
