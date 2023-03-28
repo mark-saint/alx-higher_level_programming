@@ -58,8 +58,7 @@ class Square:
         if self.__size == 0:
             return
         for _ in range(self.__size):
-            k = "_" * self.__position[0] + "#" * self.__size
-            print(k)
+            print(" " * self.__position[0] + "#" * self.__size)
 
     @property
     def position(self):
