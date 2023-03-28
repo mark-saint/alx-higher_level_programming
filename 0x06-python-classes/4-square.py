@@ -40,7 +40,7 @@ class Square:
         size setter:
         Args:
             value: new value
-        Returns: 
+        Returns:
             None
         """
         if not isinstance(value, int):
