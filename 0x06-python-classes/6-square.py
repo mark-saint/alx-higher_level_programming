@@ -60,7 +60,7 @@ class Square:
         for _ in range(self.__size):
             k = "_" * self.__position[0] + "#" * self.__size
             print(k)
-    
+
     @property
     def position(self):
         """
@@ -77,4 +77,10 @@ class Square:
         Returns:
             None
         """
+        if (not isinstance(position, tuple) or
+                len(position) != 2 or
+                not all(isinstance(position[i], int) for i in range(2)) or
+                not all(number > 0 for number in position)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+
         self.__position = position
