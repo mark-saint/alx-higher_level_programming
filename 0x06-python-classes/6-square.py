@@ -15,8 +15,8 @@ class Square:
         """
         if (not isinstance(position, tuple) or
                 len(position) != 2 or
-                not all(isinstance(position[i], int) for i in range(2)) or
-                not all(number > 0 for number in position)):
+                not all(isinstance(num, int) for num in position) or
+                not all(number >= 0 for number in position)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = position
@@ -86,8 +86,7 @@ class Square:
         """
         if (not isinstance(position, tuple) or
                 len(position) != 2 or
-                not all(isinstance(position[i], int) for i in range(2)) or
-                not all(number > 0 for number in position)):
+                not all(isinstance(num, int) for num in position) or
+                not all(number >= 0 for number in position)):
             raise TypeError("position must be a tuple of 2 positive integers")
-
         self.__position = position
