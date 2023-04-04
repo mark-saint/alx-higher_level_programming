@@ -3,5 +3,7 @@
 Rectangle class
 """
 
+
 class Rectangle:
+    """This is  rectangle class"""
     pass
