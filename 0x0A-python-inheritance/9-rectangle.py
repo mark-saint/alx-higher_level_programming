@@ -27,4 +27,4 @@ class Rectangle(BaseGeometry):
     def __repr__(self):
         '''prints the representation'''
 
-        print(f"[Rectangle] {self.__width}/{self.__height}")
+        return (f"[Rectangle] {self.__width}/{self.__height}")
