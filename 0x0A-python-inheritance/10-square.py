@@ -15,3 +15,11 @@ class Square(Rectangle):
         ''' the init method'''
 
         super(Square, self).__init__(size, size)
+
+        self.__size = size
+
+    def area(self):
+        '''
+        area method
+        '''
+        return self.__size ** 2
