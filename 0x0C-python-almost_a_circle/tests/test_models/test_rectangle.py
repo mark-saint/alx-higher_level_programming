@@ -12,3 +12,29 @@ class TestRectangle(unittest.TestCase):
     def test_id2(self):
         r = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r.id, 12)
+
+    def test_args(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle()
+
+    def test_x(self):
+        with self.assertRaises(AttributeError):
+            r = Rectangle(10, 2)
+            r.x
+
+    def test_y(self):
+        with self.assertRaises(AttributeError):
+            r = Rectangle(10, 2)
+            r.y
+
+    def test_width(self):
+        with self.assertRaises(AttributeError):
+            r = Rectangle(10, 2)
+            r.width
+
+    def test_height(self):
+        with self.assertRaises(AttributeError):
+            r = Rectangle(10, 2)
+            r.height
+
+        
