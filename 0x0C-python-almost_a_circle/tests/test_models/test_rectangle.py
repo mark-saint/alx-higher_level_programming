@@ -17,7 +17,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle()
 
-    def test_x(self):
+    def test_x_getter(self):
         with self.assertRaises(AttributeError):
             r = Rectangle(10, 2)
             r.x
@@ -30,7 +30,7 @@ class TestRectangle(unittest.TestCase):
     def test_width(self):
         with self.assertRaises(AttributeError):
             r = Rectangle(10, 2)
-            r.width = 2
+           # r.width = 2
             r.width
 
     def test_height(self):
@@ -38,6 +38,8 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(10, 2)
             r.height
 
-    def test_
-
+    def test_x_setter(self):
+        r = Rectangle(10, 2)
+        r.x = 10
+        self.assertEqual(10, r.x)
         
