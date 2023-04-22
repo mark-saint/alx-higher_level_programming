@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+
+import unittest
+from models.rectangle import Rectangle
+
+class TestRectangle(unittest.TestCase):
+    def test_id(self):
+        r1 = Rectangle(10, 2)
+        r2 = Rectangle(2, 10)
+        self.assertEqual(r1.id, r2.id - 1)
+
+    def test_id2(self):
+        r = Rectangle(10, 2, 0, 0, 12)
+        self.assertEqual(r.id, 12)
