@@ -30,11 +30,14 @@ class TestRectangle(unittest.TestCase):
     def test_width(self):
         with self.assertRaises(AttributeError):
             r = Rectangle(10, 2)
+            r.width = 2
             r.width
 
     def test_height(self):
         with self.assertRaises(AttributeError):
             r = Rectangle(10, 2)
             r.height
+
+    def test_
 
         
