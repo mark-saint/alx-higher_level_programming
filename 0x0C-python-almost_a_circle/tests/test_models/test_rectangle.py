@@ -123,4 +123,8 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(10,10)
             r.y = -1
-
+    
+    def test_str(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        p = "[Rectangle] (12) 2/1 - 4/6"
+        self.assertEqual(str(r), p)
