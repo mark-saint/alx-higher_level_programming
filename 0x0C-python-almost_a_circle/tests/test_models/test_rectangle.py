@@ -42,4 +42,85 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(10, 2)
         r.x = 10
         self.assertEqual(10, r.x)
-        
+     
+    def test_x_getter(self):
+        r = Rectangle(10, 2)
+        self.assertEqual(r.x, 0)
+
+    def test_width_setter(self):
+        r = Rectangle(10, 2)
+        r.width = 4
+        self.assertEqual(r.width, 4)
+
+    def test_init_height_str(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(10, "2")
+    
+    def test_init_width_str(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle("10", 2)
+
+    def test_init_x_str(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(10,2,"1")
+
+    def test_init_y_str(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(10,2,2,"1")
+
+    def test_init_width(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(-1,1)
+   
+    def test_init_height(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(2,-1)
+
+    def test_init_x(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(2,2,-1)
+
+    def test_init_y(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(2,2,2,-1)
+
+    def test_setter_width_str(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(10,10)
+            r.width = "3"
+
+    def test_setter_width(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(10,10)
+            r.width = -1
+
+    def test_setter_height_str(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(10,10)
+            r.height = "3"
+
+    def test_setter_height(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(10,10)
+            r.height = -1
+
+    def test_setter_x_str(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(10,10)
+            r.x = "3"
+
+    def test_setter_x(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(10,10)
+            r.x = -1
+
+    def test_setter_y_str(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle(10,10)
+            r.y = "3"
+
+    def test_setter_width(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(10,10)
+            r.y = -1
+

@@ -17,6 +17,27 @@ class Rectangle(Base):
         :param x
         :param y
         """
+        if not isinstance(width,int):
+            raise TypeError("width must be an integer")
+        if not isinstance(height,int):
+            raise TypeError("height must be an integer")
+        if not isinstance(x,int):
+            raise TypeError("x must be an integer")
+        if not isinstance(y,int):
+            raise TypeError("y must be an integer")
+        if id is not None:
+            if not isinstance(id,int):
+                raise TypeError("id must be an integer")
+
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        if height <= 0:
+            raise ValueError("height must be > 0")
+
+        if x < 0:
+            raise ValueError("x must be >= 0")
+        if y < 0:
+            raise ValueError("y must be >= 0")
         super(Rectangle, self).__init__(id)
         self.__width = width
         self.__height = height
@@ -27,10 +48,13 @@ class Rectangle(Base):
     def x(self):
         """This is a setter for x"""
         return self.__x
-
     @x.setter
     def x(self, value):
         """This is a getter for x"""
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -41,6 +65,11 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """This is a getter for y"""
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+
         self.__y = value
 
     @property
@@ -51,6 +80,11 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """This is a setter for width"""
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+
         self.__width = value
 
     @property
@@ -61,4 +95,8 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """This is a setter for height"""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
