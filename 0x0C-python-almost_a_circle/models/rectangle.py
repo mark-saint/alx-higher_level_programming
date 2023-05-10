@@ -115,3 +115,17 @@ class Rectangle(Base):
     def __str__(self):
         """Returns str"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """updates the rec"""
+        len_args = len(args)
+        if len_args < 2:
+            self.id = args[0]
+        elif len_args < 3:
+            self.__width = args[1]
+        elif len_args < 4:
+            self.__height = args[2]
+        elif len_args < 5:
+            self.__x = args[3]
+        elif len_args < 6:
+            self.__y = args[4]
