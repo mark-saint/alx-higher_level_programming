@@ -31,8 +31,6 @@ class Base:
         """
         json_dict = []
         if len(list_dictionaries) != 0:
-            for dict_ in list_dictionaries:
-                json_dict.append(json.dumps(dict_))
-            return json_dict
+            return json.dumps(list_dictionaries)
         else:
             return list_dictionaries
