@@ -5,6 +5,7 @@ This is a base script
 
 
 import json
+import os
 
 
 class Base:
@@ -72,3 +73,20 @@ class Base:
                 new = cls(1)
                 new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        sdfasdf
+        """
+        list_ = []
+        file_name = "{}.json".format(cls.__name__)
+        if os.path.exists(file_name):
+            with open(file_name, 'r') as f:
+                instances = Base.from_json_string(f.read())
+            for instance_ in instances:
+                instance_ = cls.create(**instance_)
+                list_.append(instance_)
+            return list_
+        else:
+            return []
