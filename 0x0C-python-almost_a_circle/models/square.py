@@ -21,3 +21,21 @@ class Square(Rectangle):
         return "[{}] ({}) {}/{} - {}".format(type(self).__name__,
                                              self.id, self.x,
                                              self.y, self.width)
+
+    @property
+    def size(self):
+        """
+        return size
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        seter
+        """
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value <= 0:
+            raise ValueError("size must be > 0")
+        self.width = value
