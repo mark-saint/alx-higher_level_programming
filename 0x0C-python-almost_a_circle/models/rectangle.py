@@ -17,16 +17,16 @@ class Rectangle(Base):
         :param x
         :param y
         """
-        if not isinstance(width,int):
+        if not isinstance(width, int):
             raise TypeError("width must be an integer")
-        if not isinstance(height,int):
+        if not isinstance(height, int):
             raise TypeError("height must be an integer")
-        if not isinstance(x,int):
+        if not isinstance(x, int):
             raise TypeError("x must be an integer")
-        if not isinstance(y,int):
+        if not isinstance(y, int):
             raise TypeError("y must be an integer")
         if id is not None:
-            if not isinstance(id,int):
+            if not isinstance(id, int):
                 raise TypeError("id must be an integer")
 
         if width <= 0:
@@ -48,6 +48,7 @@ class Rectangle(Base):
     def x(self):
         """This is a setter for x"""
         return self.__x
+
     @x.setter
     def x(self, value):
         """This is a getter for x"""
@@ -114,7 +115,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns str"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """updates the rec"""
@@ -124,14 +129,23 @@ class Rectangle(Base):
             if len_args < 2:
                 self.id = args[0]
             elif len_args < 3:
+                self.id = args[0]
                 self.width = args[1]
             elif len_args < 4:
+                self.id = args[0]
+                self.width = args[1]
                 self.height = args[2]
             elif len_args < 5:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
                 self.x = args[3]
             elif len_args < 6:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
                 self.y = args[4]
-
 
         else:
             for key, value in kwargs.items():
@@ -145,3 +159,10 @@ class Rectangle(Base):
                     self.x = value
                 elif key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """
+        return dict
+        """
+        return {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
