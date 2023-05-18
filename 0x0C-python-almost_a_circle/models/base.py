@@ -6,6 +6,7 @@ This is a base script
 
 import json
 import os
+import csv
 
 
 class Base:
@@ -87,6 +88,48 @@ class Base:
             for instance_ in instances:
                 instance_ = cls.create(**instance_)
                 list_.append(instance_)
+            return list_
+        else:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        save to csv
+        """
+        class_name_file = "{}.csv".format(cls.__name__)
+        if list_objs is None:
+            with open(class_name_file, 'w') as f:
+                f.write("[]")
+
+        else:
+            list_objs = [f.to_dictionary() for f in list_objs]
+            if cls.__name__ == "Rectangle":
+                field_names = ['id', 'width', 'height', 'x', 'y']
+            elif cls.__name__ == "Square":
+                field_names = ['id', 'size', 'x', 'y']
+
+            with open(class_name_file, 'w', newline='') as f:
+                writer = csv.DictWriter(f, fieldnames=field_names)
+                writer.writeheader()
+                for obj in list_objs:
+                    writer.writerow(obj)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        sadfasdf
+        """
+        list_ = []
+        class_name_file = "{}.csv".format(cls.__name__)
+        if os.path.exists(class_name_file):
+            with open(class_name_file, newline='') as csvfile:
+                reader = csv.DictReader(csvfile)
+
+                for row in reader:
+                    row = dict([key, int(value)] for key, value in row.items())
+                    instance_ = cls.create(**row)
+                    list_.append(instance_)
             return list_
         else:
             return []
