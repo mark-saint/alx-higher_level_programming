@@ -49,10 +49,16 @@ class Square(Rectangle):
             if len_args < 2:
                 self.id = args[0]
             elif len_args < 3:
+                self.id = args[0]
                 self.size = args[1]
             elif len_args < 4:
+                self.id = args[0]
+                self.size = args[1]
                 self.x = args[2]
             elif len_args < 5:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
                 self.y = args[3]
 
         else:
