@@ -29,8 +29,22 @@ class Base:
         """
         does stuff
         """
-        json_dict = []
         if len(list_dictionaries) != 0:
             return json.dumps(list_dictionaries)
         else:
             return "[]"
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        saves to file
+        """
+        class_name_file = "{}.json".format(cls.__name__)
+        if list_objs is None:
+            with open(class_name_file, 'w') as f:
+                json.dump("[]", f)
+
+        else:
+            list_objs = [f.to_dictionary() for f in list_objs]
+            with open(class_name_file, 'w') as f:
+                f.write(Base.to_json_string(list_objs))
