@@ -33,4 +33,4 @@ class Base:
         if len(list_dictionaries) != 0:
             return json.dumps(list_dictionaries)
         else:
-            return list_dictionaries
+            return "[]"
