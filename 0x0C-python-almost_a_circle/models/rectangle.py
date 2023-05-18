@@ -99,7 +99,7 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
-        self.__height = height
+        self.__height = value
 
     def area(self):
         """Area of the rectangle"""
@@ -116,16 +116,32 @@ class Rectangle(Base):
         """Returns str"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates the rec"""
         len_args = len(args)
-        if len_args < 2:
-            self.id = args[0]
-        elif len_args < 3:
-            self.__width = args[1]
-        elif len_args < 4:
-            self.__height = args[2]
-        elif len_args < 5:
-            self.__x = args[3]
-        elif len_args < 6:
-            self.__y = args[4]
+
+        if len_args != 0:
+            if len_args < 2:
+                self.id = args[0]
+            elif len_args < 3:
+                self.width = args[1]
+            elif len_args < 4:
+                self.height = args[2]
+            elif len_args < 5:
+                self.x = args[3]
+            elif len_args < 6:
+                self.y = args[4]
+
+
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
