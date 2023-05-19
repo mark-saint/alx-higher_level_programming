@@ -3,4 +3,4 @@
 
 SELECT score, COUNT(score)
 AS number
-GROUP BY number;
+GROUP BY score;
