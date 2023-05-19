@@ -1,7 +1,7 @@
 -- asdvfsdaf
 
 
-SELECT score, COUNT(score) AS number
+SELECT score, COUNT(*) AS number
 FROM second_table
-GROUP BY number
+GROUP BY score
 ORDER BY number DESC;
