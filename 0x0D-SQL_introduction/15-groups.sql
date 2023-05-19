@@ -1,6 +1,6 @@
 -- asdvfsdaf
 
 
-SELECT score, COUNT(score)
-AS number
-GROUP BY score;
+SELECT score, COUNT(score) AS number
+FROM second_table
+GROUP BY number;
