@@ -3,4 +3,4 @@
 
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states
-(id int UNIQUE NOT NULL, nmae varchar(256) NOT NULL);
+(id int AUTO_INCREMENT UNIQUE NOT NULL, nmae varchar(256) NOT NULL);
