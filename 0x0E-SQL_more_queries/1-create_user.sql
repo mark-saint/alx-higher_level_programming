@@ -1,5 +1,5 @@
 -- dfasdfdsafd
 
 
-CREATE DATABASE IF NOT EXISTS user_0d_1;
-GRANT ALL PRIVILEGES ON user_0d_1 TO user_0d_1@localhost identified BY user_0d_1_pwd;
+CREATE USER IF NOT EXISTS user_0d_1@localhost IDENTIFIED BY user_od_1_pwd;
+GRANT ALL PRIVILEGES ON "." TO user_0d_1@localhost;
