@@ -1,12 +1,12 @@
---sdfasdfdasf
+-- sdfasdfdasf
 
 
-SELECT a.title
-FROM tv_shows AS a
-INNER JOIN tv_show_genres AS b
-ON a.id = b.show_id
+SELECT tv_shows.title
+FROM tv_shows
+INNER JOIN tv_show_genres
+ON tv_shows.id = tv_show_genres.show_id
 
-INNER JOIN tv_genres AS c
-ON c.id = b.genre_id
-WHERE c.name = "Comedy"
-ORDER BY a.title;
+INNER JOIN tv_genres
+ON tv_genres.id = tv_show_genres.genre_id
+WHERE tv_genres.name = "Comedy"
+ORDER BY tv_shows.title;
