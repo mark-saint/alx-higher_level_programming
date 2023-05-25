@@ -11,5 +11,5 @@ def save_to_json_file(my_obj, filename):
     """
     safasdf
     """
-    with open(my_obj) as f:
+    with open(filename) as f:
         json.load(my_obj)
