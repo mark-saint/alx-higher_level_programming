@@ -23,4 +23,8 @@ class Student:
         if attrs is None
             return self.__dict__
         else:
-            return {k: self.__dict__[k] for k in attrs}
+            new_dict = {}
+            for k in attrs:
+                if k in self.__dict__:
+                    new_dict[k] = self.__dict__[k]
+            return new_dict
