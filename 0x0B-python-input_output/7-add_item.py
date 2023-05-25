@@ -15,7 +15,7 @@ try:
 except FileNotFoundError:
     list_ = []
 
-n =  len(sys.argv)
+n = len(sys.argv)
 
 for i in range(1, n):
     list_.append(sys.argv[i])
