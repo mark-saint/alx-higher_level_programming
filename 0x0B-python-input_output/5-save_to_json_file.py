@@ -12,4 +12,4 @@ def save_to_json_file(my_obj, filename):
     safasdf
     """
     with open(filename) as f:
-        json.load(my_obj)
+        json.dump(my_obj, f)
